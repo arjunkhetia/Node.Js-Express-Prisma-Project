@@ -25,6 +25,14 @@ Start Express.js app at `http://localhost:3000/`:
 $ npm start
 ```
 
+# Prisma
+
+Prisma is an open source next-generation ORM, it is a server-side library that helps your app read and write data to the database in an intuitive and safe way. 
+
+### Prisma Studio
+
+![Studio](https://github.com/arjunkhetia/Node.Js-Express-Prisma-Project/blob/main/public/studio.png "Studio")
+
 # Nodemon
 
 Nodemon will watch the files in the directory in which nodemon was started, and if any files change, nodemon will automatically restart your node application.
@@ -162,6 +170,7 @@ app.use(require('express-status-monitor')({
   ignoreStartsWith: '/admin' // ignore path starts with
 }));
 ```
+
 
 ![Monitoring Page](https://github.com/arjunkhetia/Node.Js-Express-Prisma-Project/blob/main/public/status-monitor.png "Monitoring Page")
 
