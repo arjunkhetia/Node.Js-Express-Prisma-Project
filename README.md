@@ -27,7 +27,29 @@ $ npm start
 
 # Prisma
 
-Prisma is an open source next-generation ORM, it is a server-side library that helps your app read and write data to the database in an intuitive and safe way. 
+Prisma is an open source next-generation ORM, it is a server-side library that helps your app read and write data to the database in an intuitive and safe way.
+
+```js
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+model User {
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
+  email String  @unique
+  name  String?
+}
+
+// Client implementation
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
+
+const allUsers = await prisma.user.findMany();
+console.log(allUsers);
+```
 
 ### Prisma Studio
 
